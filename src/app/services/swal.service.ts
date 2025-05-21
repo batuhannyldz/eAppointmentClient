@@ -16,7 +16,6 @@ export class SwalService {
       position: "bottom-right",
       showCancelButton: false,
       showCloseButton: false,
-      showConfirmButton: false,
       toast: true
     });
   }
