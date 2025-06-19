@@ -54,17 +54,6 @@ export class DoctorsComponent implements OnInit {
     }
   }
 
-  delete(id: string, fullName: string){
-    this.swal.callSwal("Delete doctor?",`You want to delete ${fullName}?`,()=> {
-      this.http.post<string>("Doctors/DeleteById", {id: id}, (res)=> {
-        this.swal.callToast(res.data,"info");
-        this.getAll();
-      })
-    })
-  }
-
-  
-
   update(form:NgForm){
     if(form.valid){
       this.http.post<string>("Doctors/Update",this.updateModel,(res)=> {
@@ -73,5 +62,15 @@ export class DoctorsComponent implements OnInit {
         this.updateModalCloseBtn?.nativeElement.click();        
       });
     }
+  }
+
+  delete(id: string,fullName: string){
+    this.swal.callSwal("Delete Doctor?",`You Want To Delete ${fullName}?`,()=>{
+      this.http.post<string>("Doctors/DeleteById",{id:id},(res)=>{
+        this.swal.callToast(res.data,"info");
+        this.getAll();
+      })
+    })
+
   }
 }
