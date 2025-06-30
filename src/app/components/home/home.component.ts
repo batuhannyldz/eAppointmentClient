@@ -124,8 +124,8 @@ export class HomeComponent {
 
     const data = {
       id: e.oldData.id,
-      startDate: this.date.transform(e.newData.startDate, "MM.dd.yyyy HH:mm"),
-      endDate: this.date.transform(e.newData.endDate, "MM.dd.yyyy HH:mm"),
+      startDate: this.date.transform(e.newData.startDate, "dd.MM.yyyy HH:mm"),
+      endDate: this.date.transform(e.newData.endDate, "dd.MM.yyyy HH:mm"),
     };
 
     this.http.post<string>("Appointments/Update", data, res => {

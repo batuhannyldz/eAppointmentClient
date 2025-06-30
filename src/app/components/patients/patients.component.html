@@ -41,7 +41,7 @@
                 @for(patient of patients | patient : search; track patient){
                     <tr>
                         <td>{{$index + 1}}</td>
-                        <td>{{patient.fullName}}</td>
+                        <td>{{patient.firstName}} {{patient.lastName}}</td>
                         <td>{{patient.identityNumber}}</td>
                         <td>{{patient.city}} / {{patient.town}}</td>
                         <td>{{patient.fullAddress}}</td>
